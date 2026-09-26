@@ -150,6 +150,35 @@
         .order-btn { display: block; text-align: center; background-color: var(--brand-blue); color: white; text-decoration: none; padding: 12px; font-size: 0.95rem; font-weight: 700; border-radius: 8px; }
         .order-btn.disabled { background-color: #cbd5e1; pointer-events: none; }
 
+        /* --- 4. VISTA DE SUCURSALES Y CONTACTO --- */
+        .contacto-subtitle { color: var(--text-muted); font-weight: 600; margin-top: 6px; }
+        .contacto-container { max-width: 1000px; margin: 0 auto; padding: 0 20px 60px; width: 100%; }
+
+        .sucursales-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .sucursal-card { background: white; border-radius: 12px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .sucursal-card h3 { color: var(--brand-blue); margin-bottom: 10px; }
+        .sucursal-direccion { color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 14px; }
+        .sucursal-link { display: inline-block; color: var(--brand-blue); font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+        .sucursal-link:hover { color: var(--brand-orange); }
+
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .info-card { background: white; border-radius: 12px; padding: 22px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .info-card h3 { color: var(--brand-blue); margin-bottom: 14px; }
+        .horario-table { width: 100%; border-collapse: collapse; }
+        .horario-table td { padding: 6px 0; font-size: 0.92rem; border-bottom: 1px solid #f1f5f9; }
+        .horario-table td:first-child { font-weight: 700; color: #475569; }
+        .horario-table td:last-child { text-align: right; color: var(--text-muted); }
+
+        .contacto-telefono { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; }
+        .contacto-telefono a { color: var(--text-dark); text-decoration: none; }
+        .whatsapp-btn { display: inline-block; background-color: #25D366; color: white; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 700; }
+        .whatsapp-btn:hover { background-color: #1da851; }
+
+        .promo-banner { background: linear-gradient(135deg, var(--brand-blue), #002270); color: white; border-radius: 12px; padding: 24px 28px; text-align: center; }
+        .promo-banner h3 { color: #ffd27a; margin-bottom: 10px; font-size: 1.3rem; }
+        .promo-banner p { margin-bottom: 8px; }
+        .promo-fine { font-size: 0.78rem; opacity: 0.75; margin-bottom: 0; }
+
         /* --- 3. VISTA DE ADMINISTRACIÓN --- */
         .admin-wrapper { max-width: 800px; margin: 40px auto; width: 100%; padding: 0 20px; }
         .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
@@ -185,6 +214,7 @@
         <div class="nav-menu">
             <span class="nav-link active" onclick="cambiarVista('inicio')">Inicio</span>
             <span class="nav-link" onclick="cambiarVista('catalogo')">Ver Catálogo</span>
+            <span class="nav-link" onclick="cambiarVista('contacto')">Sucursales y Horario</span>
             <span class="nav-link admin-btn" onclick="entrarComoAdmin()">Admin</span>
         </div>
     </nav>
@@ -192,6 +222,54 @@
     <!-- PESTAÑA 1: INICIO PÚBLICO -->
     <section id="vista-inicio" class="view-section active-view">
         <button class="cta-button" onclick="cambiarVista('catalogo')">Ingresar al Catálogo</button>
+    </section>
+
+    <!-- PESTAÑA 4: SUCURSALES, HORARIO Y CONTACTO -->
+    <section id="vista-contacto" class="view-section">
+        <div class="catalog-header">
+            <h2>Nuestras Sucursales</h2>
+            <p class="contacto-subtitle">Su farmacia de confianza</p>
+        </div>
+        <div class="contacto-container">
+            <div class="sucursales-grid">
+                <div class="sucursal-card">
+                    <h3>Lomas del Río</h3>
+                    <p class="sucursal-direccion">San José, Pavas, Lomas del Río, costado noroeste del Colegio de Rincón Grande, local esquinero.</p>
+                    <a class="sucursal-link" href="https://www.google.com/maps/search/?api=1&query=Farmacia+El+Botiqu%C3%ADn+Lomas+del+R%C3%ADo+Pavas+San+Jos%C3%A9" target="_blank">Ver en el mapa</a>
+                </div>
+                <div class="sucursal-card">
+                    <h3>Pavas Centro</h3>
+                    <p class="sucursal-direccion">Pavas Centro, San José. (Dirección exacta próximamente)</p>
+                    <a class="sucursal-link" href="https://www.google.com/maps/search/?api=1&query=Farmacia+El+Botiqu%C3%ADn+Pavas+Centro+San+Jos%C3%A9" target="_blank">Ver en el mapa</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Horario de Atención</h3>
+                    <table class="horario-table">
+                        <tr><td>Lunes</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Martes</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Miércoles</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Jueves</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Viernes</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Sábado</td><td>8:30 a. m. – 8:00 p. m.</td></tr>
+                        <tr><td>Domingo</td><td>9:00 a. m. – 7:00 p. m.</td></tr>
+                    </table>
+                </div>
+                <div class="info-card">
+                    <h3>Contacto</h3>
+                    <p class="contacto-telefono">📞 <a href="tel:+50622135670">+506 2213-5670</a></p>
+                    <a class="whatsapp-btn" href="https://wa.me/50622135670?text=%C2%A1Hola%20Farmacia%20El%20Botiqu%C3%ADn!%20Quisiera%20hacer%20una%20consulta." target="_blank">Escribir por WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="promo-banner">
+                <h3>✨ Días Dorados</h3>
+                <p>Todos los martes y miércoles, <strong>10% de descuento para adultos mayores</strong> presentando su cédula de identidad.</p>
+                <p class="promo-fine">Aplican restricciones en productos seleccionados. Descuento no acumulable con otras promociones.</p>
+            </div>
+        </div>
     </section>
 
     <!-- PESTAÑA 2: CATÁLOGO DIGITAL -->
@@ -306,7 +384,7 @@
             }
 
             lista.forEach(prod => {
-                const numeroTelefono = "50688888888"; 
+                const numeroTelefono = "50622135670";
                 const tieneStock = parseInt(prod.stock) > 0;
                 const stockMsg = tieneStock ? `Disponibles: ${prod.stock} uds.` : "Producto Agotado";
                 
